@@ -1,23 +1,20 @@
-use serde::{Serialize, Deserialize};
+use sea_orm::entity::prelude::*;
+use serde::{Deserialize, Serialize};
 
-/*
-Movies model and DTO  definitions
-*/
-
-
-// Movie model
-#[derive(Debug, Serialize, Deserialize)]
-pub struct Movie {
+#[derive(Clone, Debug, PartialEq, DeriveEntityModel, Serialize, Deserialize)]
+#[sea_orm(table_name = "movies")]
+pub struct Model {
+    #[sea_orm(primary_key)]
+    #[serde(skip_deserializing)] 
     pub id: i32,
-    pub titulo: String,
-    pub temporadas: i32,
-    pub genero: String,
+    pub title: String,
+    pub genre: String,
+    pub poster: String,
+    pub year: i32,
+    pub rating: f32,
 }
 
-// DTO for creating a new movie
-#[derive(Deserialize)]
-pub struct CreateMovie {
-    pub titulo: String,
-    pub temporadas: i32,
-    pub genero: String,
-}
+#[derive(Copy, Clone, Debug, EnumIter, DeriveRelation)]
+pub enum Relation {}
+
+impl ActiveModelBehavior for ActiveModel {}

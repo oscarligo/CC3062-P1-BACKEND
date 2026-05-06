@@ -1,1 +1,1 @@
-pub mod product_handler;
+pub mod movies_handler;

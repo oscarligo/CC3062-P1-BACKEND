@@ -2,8 +2,9 @@ use actix_cors::Cors;
 use actix_web::{http::header, web, App, HttpServer};
 use dotenv::dotenv;
 use std::env;
-
+use std::sync::Arc;
 use sea_orm::Database;
+mod entities; 
 mod models;
 mod db;
 mod handlers;
@@ -19,6 +20,9 @@ async fn main() -> std::io::Result<()> {
     let db = Database::connect(&database_url)
         .await
         .expect("Failed to connect to the database");
+
+    // Movie repository instance
+    let movie_repo: Arc<dyn MovieRepository> = Arc::new(SeaOrmMovieRepository { db: db_conn });
 
     println!("Server running on http://localhost:{}", port);
 

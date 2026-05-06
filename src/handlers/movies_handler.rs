@@ -52,9 +52,19 @@ pub async fn create(
 pub async fn update(
     repo: web::Data<Arc<dyn MovieRepository>>,
     id: web::Path<i32>,
-    body: web::Json<Model>
+    body: web::Json<CreateMovieDto>
 ) -> impl Responder {
-    match repo.update(id.into_inner(), body.into_inner()).await {
+    let id = id.into_inner();
+    let updated_movie = Model {
+        id,
+        title: body.title.clone(),
+        genre: body.genre.clone(),
+        poster: body.poster.clone(),
+        year: body.year,
+        rating: body.rating,
+    };
+
+    match repo.update(id, updated_movie).await {
         Ok(movie) => HttpResponse::Ok().json(movie),
         Err(_) => HttpResponse::NotFound().json("Error: Movie not found"),
     }

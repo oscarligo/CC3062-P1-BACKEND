@@ -19,7 +19,8 @@ impl MovieRepository for SeaOrmMovieRepository {
     }
 
     async fn create(&self, data: Model) -> Result<Model, DbErr> {
-        let active_model: ActiveModel = data.into_active_model();
+        let mut active_model: ActiveModel = data.into_active_model();
+        active_model.id = NotSet;
         active_model.insert(&self.db).await
     }
 
@@ -31,7 +32,10 @@ impl MovieRepository for SeaOrmMovieRepository {
 
         let mut active_model: ActiveModel = movie_to_update.into();
         active_model.title = Set(data.title);
+        active_model.genre = Set(data.genre);
         active_model.poster = Set(data.poster);
+        active_model.year = Set(data.year);
+        active_model.rating = Set(data.rating);
         
         active_model.update(&self.db).await
     }

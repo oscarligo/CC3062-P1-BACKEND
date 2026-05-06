@@ -1,5 +1,5 @@
 use async_trait::async_trait;
-use crate::entities::movie; 
+use crate::models::movie; 
 use sea_orm::DbErr;
 
 #[async_trait]

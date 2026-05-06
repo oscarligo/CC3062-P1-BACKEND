@@ -1,5 +1,8 @@
+use async_trait::async_trait;
 use sea_orm::*;
-use crate::entities::movie::{Entity as Movie, Model, ActiveModel};
+use crate::models::movie::movie::{Entity as Movie, Model, ActiveModel};
+
+use super::movies_repository::MovieRepository;
 
 pub struct SeaOrmMovieRepository {
     pub db: DatabaseConnection,
@@ -24,7 +27,7 @@ impl MovieRepository for SeaOrmMovieRepository {
         let movie_to_update = Movie::find_by_id(id)
             .one(&self.db)
             .await?
-            .ok_or(DbErr::RecordNotFound("Película no encontrada".to_owned()))?;
+            .ok_or(DbErr::RecordNotFound("Movie not found".to_owned()))?;
 
         let mut active_model: ActiveModel = movie_to_update.into();
         active_model.title = Set(data.title);

@@ -73,6 +73,11 @@ Arquitectura por capas: **handlers → repositorio → DB**
 
 Base URL: `http://localhost:${BACKEND_PORT}`
 
+## Swagger / OpenAPI
+
+- Swagger UI: `http://localhost:${BACKEND_PORT}/swagger-ui/`
+- OpenAPI JSON: `http://localhost:${BACKEND_PORT}/api-doc/openapi.json`
+
 ### GET /movies
 Lista todas las peliculas
 

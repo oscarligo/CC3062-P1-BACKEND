@@ -5,9 +5,12 @@ use dotenv::dotenv;
 use std::env;
 use std::sync::Arc;
 use sea_orm::Database;
+use utoipa::OpenApi;
+use utoipa_swagger_ui::SwaggerUi;
 mod models;
 mod db;
 mod handlers;
+mod api_doc;
 
 #[actix_web::main]
 async fn main() -> std::io::Result<()> {
@@ -45,10 +48,14 @@ async fn main() -> std::io::Result<()> {
             .service(handlers::movies_handler::create)
             .service(handlers::movies_handler::update)
             .service(handlers::movies_handler::delete)
+            .service(
+                SwaggerUi::new("/swagger-ui/{_:.*}")
+                    .url("/api-doc/openapi.json", api_doc::ApiDoc::openapi()),
+            )
             
     
     })
-    .bind(("0.0.0.0", 8080))?
+    .bind(("0.0.0.0", port))?
     .run()
     .await
 }

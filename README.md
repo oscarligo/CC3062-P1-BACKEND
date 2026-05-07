@@ -26,8 +26,21 @@ docker compose up --build
 - DBMS: PostgreSQL
 - ORM: SeaORM
 - Contenedores: Docker + Docker Compose
+- Documentación: Swagger
+
+
+## Reflexión sobre el uso de tecnologías. 
+
+Sin duda volvería a desarrollar una API en Rust. Las macros han sido una de las características que más me han gustado, ya que permiten escribir un código más limpio y legible. Además, durante el proyecto me animé a utilizar un ORM por primera vez, lo que ayudó a reducir la cantidad de líneas de código, sin quitarle complejidad a las operaciones a la base de datos.
+
+También me resultó muy interesante implementar la documentación con Swagger. Gracias a las macros de Utopia, fue relativamente sencillo hacerlo. En resumen, Rust y los crates que utilicé aportaron complejidad al proyecto, pero manteniendo un código claro, ordenado y escalable.
+
+
+---
+
 
 ## Configuración de CORS
+
 Definición: CORS (Cross-Origin Resource Sharing) es una política de seguridad que los navegadores aplican para prevenir que un script en un origen acceda a recursos de otro origen sin permiso explícito.
 
 Configuración: Se implementó un middleware que añade las cabeceras Access-Control-Allow-Origin: * y permite los métodos GET, POST, PUT, DELETE, OPTIONS, garantizando que el cliente de JavaScript vanilla pueda consumir la API mediante fetch().

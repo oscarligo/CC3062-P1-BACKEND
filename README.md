@@ -6,7 +6,8 @@ Repositorio conn el front-end: <https://github.com/oscarligo/CC3062-P1-FRONTEND.
 
 Proyecto funcionando en internet: <https://rompich.site>
 
-<img width="680" height="340" alt="Screenshot 2026-05-06 at 8 48 28 PM" src="https://github.com/user-attachments/assets/d87a2a59-7469-44cf-92e4-a3fa6a5bca5e" />
+<img width="1440" height="900" alt="Screenshot 2026-05-06 at 11 38 55 PM" src="https://github.com/user-attachments/assets/2e8ca11f-7c0b-4d5f-bcf4-ab7275881485" />
+
 
 ### Requisitos para levantar.
 

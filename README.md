@@ -22,6 +22,20 @@ docker compose up --build
 - ORM: SeaORM
 - Contenedores: Docker + Docker Compose
 
+## Configuración de CORS
+Definición: CORS (Cross-Origin Resource Sharing) es una política de seguridad que los navegadores aplican para prevenir que un script en un origen acceda a recursos de otro origen sin permiso explícito.
+
+Configuración: Se implementó un middleware que añade las cabeceras Access-Control-Allow-Origin: * y permite los métodos GET, POST, PUT, DELETE, OPTIONS, garantizando que el cliente de JavaScript vanilla pueda consumir la API mediante fetch().
+
+```rust
+let cors = Cors::default()
+            .allow_any_origin()
+            .allowed_methods(vec!["GET", "POST", "PUT", "DELETE", "OPTIONS"])
+            .allowed_headers(vec![header::ACCEPT, header::CONTENT_TYPE])
+            .max_age(3600);
+
+```
+
 ---
 
 ## Estructura del proyecto

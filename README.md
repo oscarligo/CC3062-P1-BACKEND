@@ -28,12 +28,18 @@ docker compose up --build
 - Contenedores: Docker + Docker Compose
 - Documentación: Swagger
 
+## Challenges Implementados
 
-## Reflexión sobre el uso de tecnologías. 
+- Spec de OpenAPI/Swagger escrita y precisa (el contrato de la API en YAML o JSON)
+- Swagger UI corriendo y siendo servido desde el backend (no solo el archivo)	20
+- Códigos HTTP correctos en toda la API (201 al crear, 204 al eliminar, 404 si no existe, 400 en input inválido, etc.)
+- Validación server-side con respuestas de error en JSON descriptivas
+
+## Reflexión sobre el uso de tecnologías
 
 Sin duda volvería a desarrollar una API en Rust. Las macros han sido una de las características que más me han gustado, ya que permiten escribir un código más limpio y legible. Además, durante el proyecto me animé a utilizar un ORM por primera vez, lo que ayudó a reducir la cantidad de líneas de código, sin quitarle complejidad a las operaciones a la base de datos.
 
-También me resultó muy interesante implementar la documentación con Swagger. Gracias a las macros de Utopia, fue relativamente sencillo hacerlo. En resumen, Rust y los crates que utilicé aportaron complejidad al proyecto, pero manteniendo un código claro, ordenado y escalable.
+También me resultó muy interesante implementar la documentación con Swagger. Gracias a las macros de Utopia, fue relativamente sencillo hacerlo. En resumen, Rust y los crates que utilicé aportaron complejidad al proyecto, pero manteniendo un código reducido, ordenado y escalable.
 
 
 ---

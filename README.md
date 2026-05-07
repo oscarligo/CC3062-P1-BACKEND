@@ -4,7 +4,7 @@ Backend  que expone una **API REST ** para gestionar **Películas**.
 
 Repositorio conn el front-end: <https://github.com/oscarligo/CC3062-P1-FRONTEND.git>
 
-Proyecto funcionando en internet: <https://rompich.site>
+Proyecto funcionando en internet: <http://35.212.219.176:8080/swagger-ui/>
 
 <img width="1440" height="900" alt="Screenshot 2026-05-06 at 11 38 55 PM" src="https://github.com/user-attachments/assets/2e8ca11f-7c0b-4d5f-bcf4-ab7275881485" />
 

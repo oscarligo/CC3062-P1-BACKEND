@@ -20,6 +20,7 @@ services:
       timeout: 5s
       retries: 10
   backend:
+    build: .
     container_name: CC3062_P1_BACKEND
     restart: always
     env_file:

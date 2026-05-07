@@ -4,6 +4,7 @@ Backend  que expone una **API REST ** para gestionar **Películas**.
 
 Repositorio conn el front-end: <https://github.com/oscarligo/CC3062-P1-FRONTEND.git>
 
+Proyecto funcionando en internet: <https://rompich.site>
 
 <img width="680" height="340" alt="Screenshot 2026-05-06 at 8 48 28 PM" src="https://github.com/user-attachments/assets/d87a2a59-7469-44cf-92e4-a3fa6a5bca5e" />
 
